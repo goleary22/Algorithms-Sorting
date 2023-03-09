@@ -39,7 +39,7 @@ def main():
 
     # Open the file and read in its contents
     with open(filename) as data_file:
-        text = data_file.readlines() #read the rest of the lines
+        text = data_file.readlines() #read the lines
         for i in range(len(text)):
             text[i] = text[i].replace('\n','').split(" ")
     logs = text[0]
