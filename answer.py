@@ -25,6 +25,7 @@ def student_log(text: str):
     for studentID in list(studentInfo):
         if studentInfo[studentID]['lowestPageID'] == None or studentInfo[studentID]['totalSubmitted'] == 0:
             studentInfo.pop(studentID)
+            continue
         studentInfo[studentID]['avgSubmissionScore'] = int(studentInfo[studentID]['totalScores'] / studentInfo[studentID]['totalSubmitted'])
     
     sortedStudentInfo = sorted(studentInfo, key=lambda studentID: (studentInfo[studentID]['lowestPageID'],studentInfo[studentID]['latestPageID'],studentInfo[studentID]['avgSubmissionScore']))
